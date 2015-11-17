@@ -1,0 +1,139 @@
+﻿@import "init";
+@import "colors";
+@import "mixins";
+
+/* Basic */
+@base-size: 14px;
+
+html {
+    font-family: 'open sans', Verdana, helvetica, sans-serif;
+    font-size: @base-size;
+}
+
+body {
+    background: @main-color;
+}
+
+h1 {
+    font-size: @base-size + 10px;
+}
+
+h2 {
+    font-size: @base-size + 4px;
+}
+
+h3 {
+    font-size: @base-size + 2px;
+}
+
+h4 {
+    font-size: @base-size;
+}
+
+/* layout */
+
+#container {
+    margin-top: 5px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFF;
+    padding: 5px;
+    .rounded-corners;
+    color: darken(@main-color,10%);
+}
+
+/* Section */
+
+header h1 {
+    font-size: 24px;
+    font-family: 'share', cursive;
+    color: blue;
+}
+
+nav {
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            float: left;
+            margin: 2px;
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    font-size: 9px;
+    text-align: center;
+    color: blue;
+
+    nav {
+        float: none;
+        display: inline-block;
+        font-size: 9px;
+        vertical-align: middle;
+    }
+}
+
+@app-root:"http://localhost:2708/";
+
+#contact-module {
+    .fonts() {
+        font-family: 'open sans', Verdana, helvetica, sans-serif;
+        font-size: @base-size;
+    }
+}
+
+/* Form */
+
+#contact-form {
+    background-image:url("{@app-root}images/background.jpg");
+    background: #f8f8f8;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: black 1px solid;
+    .rounded-corners(10px);
+    padding: 5px;
+
+    input[type=text], textarea {
+        margin-top: 5px;
+        display: block;
+        width: 250px;
+        #contact-module > .fonts();
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-right: auto;
+        background: #ffffe0;
+        border: 1px #000 solid;
+        .rounded-corners;
+        padding: 2px;
+    }
+
+    textarea {
+        height: 150px;
+        font-family: 'open sans', Verdana, helvetica, sans-serif;
+    }
+
+    label {
+        width: 150px;
+    }
+
+    .validation {
+        display:none;
+    }
+}
+
+
